@@ -16,7 +16,7 @@
 	<body>
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">		
-				<div class="col-md-8 col-xl-6 chat">
+				<div class="col-md-20 col-xl-6 chat">
 					<div class="card">
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight">
@@ -33,6 +33,9 @@
 						</div>
 						<div class="card-footer">
 							<form id="messageArea" class="input-group">
+								<div class="input-group-append">
+									<button type="upload" id="upload" class="input-group-text upload_btn"><i class="fas fa-file-upload"></i></button>
+								</div>
                                 <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
 								<div class="input-group-append">
 									<button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
