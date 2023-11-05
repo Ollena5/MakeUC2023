@@ -1,5 +1,5 @@
 import {OpenAI} from 'openai';
-const apiKey = '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';
+;const apiKey ='';
 const openai = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 
 export default function index(apiKey,openai){
