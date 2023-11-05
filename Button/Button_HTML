@@ -1,0 +1,8 @@
+<!-- HTML for the icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div id="drop-icon">
+<!--   <img src="icon.png" alt="Drag and drop icon"> -->
+  <button type="upload" id="upload" class="input-group-text upload_btn"><i class="fas fa-file-upload"></i><small>  Drag and drop your PDF files here </small></button>
+</div>
+
