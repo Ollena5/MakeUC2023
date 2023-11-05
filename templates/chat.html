@@ -14,6 +14,7 @@
 	
 	
 	<body>
+		<script src="script.js"></script>
 		<div class="container-fluid h-500">
 			<div class="row justify-content-center h-100">		
 				<div class="col-md-20 col-xl-6 chat">
@@ -52,33 +53,5 @@
 				</div>
 			</div>
         </div>
-		<script>
-			// Get a reference to the file input element
-			const fileInput = document.getElementById("document-input");
-		  
-			// Add an event listener to listen for file selection
-			fileInput.addEventListener("change", (event) => {
-			  // Get the selected file
-			  const selectedFile = event.target.files[0];
-		  
-			  if (selectedFile) {
-				// You can perform further actions with the selected file here
-				console.log("Selected file: ", selectedFile.name);
-		  
-				const formData = new FormData();
-				formData.append("file", selectedFile);
-				fetch("/upload", {
-				  method: "POST",
-				  body: formData,
-				})
-				  .then(response => {
-				    	console.log(selectedFile)
-				  })
-				  .catch(error => {
-				    console.log('An error occured')
-				  });
-			  }
-			});
-		  </script>  
     </body>
 </html>
