@@ -1,0 +1,16 @@
+#drop-icon {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #999;
+  text-align: center;
+  cursor: pointer;
+}
+button{
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #999;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
