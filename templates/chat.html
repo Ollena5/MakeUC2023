@@ -32,20 +32,53 @@
 							  </div>
 						</div>
 						<div class="card-footer">
-							<form id="messageArea" class="input-group">
-								<div class="input-group-append">
-									<button type="button" id="upload" class="input-group-text upload_btn"><i class="fas fa-file-upload"></i></button>
-								</div>
+							<div id="messageArea" class="input-group">
+								<form id="document-upload-form">
+									<div class="input-group">
+									  <input type="file" id="document-input" style="display: none;">
+									  <div class="input-group-append">
+										<label for="document-input" class="input-group-text upload_btn"><i class="fas fa-file-upload"></i></label>
+									  </div>
+									</div>
+								</form>
+								  
                                 <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
 								<div class="input-group-append">
 									<button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
         </div>
-        
+		<script>
+			// Get a reference to the file input element
+			const fileInput = document.getElementById("document-input");
+		  
+			// Add an event listener to listen for file selection
+			fileInput.addEventListener("change", (event) => {
+			  // Get the selected file
+			  const selectedFile = event.target.files[0];
+		  
+			  if (selectedFile) {
+				// You can perform further actions with the selected file here
+				console.log("Selected file: ", selectedFile.name);
+		  
+				const formData = new FormData();
+				formData.append("file", selectedFile);
+				fetch("/upload", {
+				  method: "POST",
+				  body: formData,
+				})
+				  .then(response => {
+				    	console.log(selectedFile)
+				  })
+				  .catch(error => {
+				    console.log('An error occured')
+				  });
+			  }
+			});
+		  </script>  
     </body>
 </html>
